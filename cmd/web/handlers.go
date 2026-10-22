@@ -7,7 +7,7 @@ import (
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	files := []string{
-		"./ui/html/base.tmpl2",
+		"./ui/html/base.tmpl",
 		"./ui/html/pages/home.tmpl",
 	}
 

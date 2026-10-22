@@ -21,15 +21,9 @@ func main() {
 		logger: logger,
 	}
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", app.home)
-
-	fileServer := http.FileServer(http.Dir("./ui/static/"))
-	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
-
 	server := &http.Server{
 		Addr:    *addr,
-		Handler: mux,
+		Handler: app.routes(),
 	}
 
 	logger.Info("server is running", "address", *addr)

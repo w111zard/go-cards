@@ -10,6 +10,7 @@ func main() {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
 
 	mux := http.NewServeMux()
+	mux.HandleFunc("/", home)
 
 	logger.Info("server is running", "port", 3000)
 	err := http.ListenAndServe(":3000", mux)

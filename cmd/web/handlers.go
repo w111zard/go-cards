@@ -7,20 +7,18 @@ import (
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	files := []string{
-		"./ui/html/base.tmpl",
+		"./ui/html/base.tmpl2",
 		"./ui/html/pages/home.tmpl",
 	}
 
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
-		app.logger.Error("server error", err)
-		http.Error(w, "Internal Server Error", 500)
+		app.serverError(w, err)
 		return
 	}
 
 	err = ts.ExecuteTemplate(w, "base", nil)
 	if err != nil {
-		app.logger.Error("server error", err)
-		http.Error(w, "Internal Server Error", 500)
+		app.serverError(w, err)
 	}
 }

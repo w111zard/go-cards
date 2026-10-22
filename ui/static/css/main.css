@@ -1,5 +1,11 @@
+:root {
+  --color-accent: #31CDFE;
+  --color-text-bright: #FAFAFA;
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
 html, body {
@@ -13,5 +19,15 @@ p {
 }
 
 header {
-  background-color: #31CDFE;
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  color: var(--color-text-bright);
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0 20px;
+}
+
+header img {
+  height: 75px;
 }

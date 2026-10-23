@@ -23,4 +23,4 @@ CREATE TABLE cards (
 );
 
 INSERT INTO users(email, password_hash)
-VALUES ('user@user.com', '1234');
+VALUES ('user@user.com', '$2a$12$uiJ1ntPt/CejObRNibDBbuNPt5QVntKJ8RLzqU/kvkjE0xa0Izl8a');

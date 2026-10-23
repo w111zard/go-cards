@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"flag"
+	"fmt"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/w111zard/go-cards/internal/models"
 	"log/slog"
@@ -13,6 +14,7 @@ import (
 type application struct {
 	logger *slog.Logger
 	decks  *models.DeckModel
+	users  *models.UserModel
 }
 
 func connectDB() (*sql.DB, error) {
@@ -43,6 +45,7 @@ func main() {
 	app := &application{
 		logger: logger,
 		decks:  &models.DeckModel{db},
+		users:  &models.UserModel{db},
 	}
 
 	server := &http.Server{

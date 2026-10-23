@@ -3,7 +3,6 @@ package main
 import (
 	"database/sql"
 	"flag"
-	"fmt"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/w111zard/go-cards/internal/models"
 	"log/slog"

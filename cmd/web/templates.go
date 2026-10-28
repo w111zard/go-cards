@@ -5,5 +5,6 @@ import (
 )
 
 type templateData struct {
+	User  *models.User
 	Decks []*models.Deck
 }

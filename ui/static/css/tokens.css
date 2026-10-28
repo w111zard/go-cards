@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #F5F9FB;
+  --color-surface: #FFFFFF;
+  --color-accent: #31CDFE;
+  --color-text: #1E2A32;
+  --color-text-muted: #5B6B75;
+  --color-text-on-accent: #FAFAFA;
+  --color-deck-cover-bg: #FFFFFF;
+
+  --font-family: 'Nunito', sans-serif;
+
+  --radius-lg: 20px;
+
+  --shadow-raised: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  --shadow-raised-hover: 10px 10px 5px rgba(0, 0, 0, 0.1);
+
+  --duration-fast: 0.2s;
+}

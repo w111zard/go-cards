@@ -40,3 +40,28 @@ func (m *DeckModel) GetByID(id string) (*Deck, error) {
 
 	return &d, nil
 }
+
+func (m *DeckModel) GetAllByUserID(userID string) ([]*Deck, error) {
+	query := `SELECT id, name, user_id FROM "decks" WHERE user_id = $1`
+
+	rows, err := m.DB.Query(query, userID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var decks []*Deck
+	for rows.Next() {
+		var d Deck
+		if err := rows.Scan(&d.ID, &d.Name, &d.UserID); err != nil {
+			return nil, err
+		}
+		decks = append(decks, &d)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return decks, nil
+}

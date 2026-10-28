@@ -22,5 +22,13 @@ CREATE TABLE cards (
   deck_id UUID NOT NULL REFERENCES decks(id) ON DELETE CASCADE
 );
 
-INSERT INTO users(email, password_hash)
-VALUES ('user@user.com', '$2a$12$uiJ1ntPt/CejObRNibDBbuNPt5QVntKJ8RLzqU/kvkjE0xa0Izl8a');
+INSERT INTO users(id, email, password_hash) VALUES 
+('5af92237-164a-4bd5-93f2-db7ab8eb7c51', 'user@user.com', '$2a$12$uiJ1ntPt/CejObRNibDBbuNPt5QVntKJ8RLzqU/kvkjE0xa0Izl8a');
+
+INSERT INTO decks(name, user_id) VALUES
+('Deck 1', '5af92237-164a-4bd5-93f2-db7ab8eb7c51'),
+('Deck 2', '5af92237-164a-4bd5-93f2-db7ab8eb7c51'),
+('Deck 3', '5af92237-164a-4bd5-93f2-db7ab8eb7c51'),
+('Deck 4', '5af92237-164a-4bd5-93f2-db7ab8eb7c51'),
+('Deck 5', '5af92237-164a-4bd5-93f2-db7ab8eb7c51'),
+('Deck 6', '5af92237-164a-4bd5-93f2-db7ab8eb7c51');

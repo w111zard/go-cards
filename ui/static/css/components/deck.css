@@ -7,21 +7,26 @@
 .deck {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
   padding: 20px 10px;
   font-size: 22px;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-raised);
   transition: box-shadow var(--duration-fast), transform var(--duration-fast);
-}
-
-.deck:hover {
-  box-shadow: var(--shadow-raised-hover);
-  transform: translateY(-4px);
 }
 
 .deck__cover {
   width: 200px;
-  background-color: var(--color-deck-cover-bg);
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-raised);
+}
+
+.deck:hover {
+  transform: translateY(-4px);
+}
+
+.deck__cover:hover {
+  box-shadow: var(--shadow-raised-hover);
 }
